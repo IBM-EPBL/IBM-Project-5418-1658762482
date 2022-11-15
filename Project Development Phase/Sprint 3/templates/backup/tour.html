@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+    <!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+      <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+      <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LAUNCH</a>
+    </div>
+  </div>
+
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LAUNCH</a>
+    
+  </div>
+  <!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+    <div class="w3-black" id="tour">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+          <h2 class="w3-wide w3-center">About</h2>
+          <p class=" w3-center"><i>In this project Gesture based Desktop automation ,First the model is trained pre trained on the images of different hand gestures, such as a showing numbers with fingers as 1 ,2,3,4 .<br> This model uses the integrated webcam to capture the video frame. The image of the gesture captured in the video frame is compared with  the Pre-trained model and the gesture is identified.</i></p>
+          <br>
+        </div>
+    </div>
+
+    <h2 class="w3-wide w3-center">User Guide</h2>
+    <ul class="w3-container  w3-ul w3-border w3-white w3-text-grey" >
+        <li class="w3-padding"><span class="w3-tag w3-red w3-margin-left">step 1</span>Select an input image from the local system by clicking upload.</li>
+        <li class="w3-padding"><span class="w3-tag w3-red w3-margin-left">step 2</span>Click the predict button. </li>
+        <li class="w3-padding"><span class="w3-tag w3-red w3-margin-left">step 3</span>Once the camera window opens, show the required hand gestures. </li>
+        <li class="w3-padding"><span class="w3-tag w3-red w3-margin-left">step 4</span>The desired action is performed and the resulting image is produced in a window. </li>
+      </ul>
+<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">Gestures</h2>
+</div>
+ <!-- Automatic Slideshow Images -->
+ 
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/one.png')}}" style="height:500px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h1  style="color:black;">Gesture ONE.</h1>
+      <h3><p style="color:blue;"><b>The provided image is resized to a fixed width and height. The resizing is done with the resize method of openCV.</b></p>    </h3>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/two.jpeg')}}" style="height:500px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h1  style="color:black;">Gesture TWO.</h1>
+      <h3><p style="color:blue;"><b>The image is rotated by 45 degrees when the gesture two is detected.The image is rotated by getRotationMatrix2D method of openCV.</b></p>    </h3>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/three.webp')}}" style="height:500px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small"style="max-height:1000px;">
+      <h1  style="color:black;"">Gesture THREE.</h1>
+      <h3><p style="color:blue;"><b>The image is blurred when the gesture 3 is detected. The image is blurred using GaussianBlur method of openCV.</b></p>   </h3>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/four.jpg')}}" style="height:500px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small"style="max-height:1000px;">
+      <h1  style="color:black;"">Gesture FOUR.</h1>
+      <h3><p style="color:blue;"><b>A rectangular area is outlined in the image. This is performed by rectangle method of openCV.</b></p>   </h3>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/five.webp')}}" style="height:500px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small"style="max-height:1000px;">
+      <h1  style="color:black;"">Gesture FIVE.</h1>
+      <h3><p style="color:blue;"><b>All current windows are closed.</b></p>   </h3>
+    </div>
+  </div>
+<br>
+<div class="w3-black" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <h2 class="w3-wide w3-center">TECHNOLOGY STACK USED:</h2>
+<div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+    <div class="w3-third w3-margin-bottom">
+        <div class="w3-container w3-white">
+          <p><b style="color:rgb(101, 101, 228);">Python</b></p>
+          <p>Python is a high-level, general-purpose programming language.Python is a general-purpose high level programming language that is widely used in data science and for producing deep learning algorithms..</p>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-container w3-white">
+          <p><b style="color:rgb(101, 101, 228);">FRONT END</b></p>
+          <p>The front end of the web application is designed using <b>HTML,CSS </b> and <b>Javascript</b>. The front end provides a dynamic and seamless user experience. The website contains three webpages.</p>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <div class="w3-container w3-white">
+          <p><b style="color:rgb(101, 101, 228);">openCV</b></p>
+          <p>OpenCV is a library of programming functions mainly aimed at real-time computer vision. OpenCV methods are used to resize, rotate and perform other manipulations on the image based on the detected gesture.</p>
+        </div>
+      </div>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-container w3-white">
+        <p><b style="color:rgb(101, 101, 228);">Flask</b></p>
+        <p>Flask is a micro web framework written in Python. Flask is used to manage and integrate the front end with the python CNN model backend </p>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-container w3-white">
+        <p><b style="color:rgb(101, 101, 228);">TENSORFLOW</b></p>
+        <p>TensorFlow is a free and open-source software library for machine learning and artificial intelligence.It is used in developing the CNN deep learning model.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-container w3-white">
+        <p><b style="color:rgb(101, 101, 228);"> IBM cloud</b></p>
+        <p>IBM cloud is used to train the deep learning model online with the dataset.</p>
+      </div>
+    </div>
+  </div>
+    </div></div>
+    
+
+  <script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 4000);    
+    }
+    
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    var modal = document.getElementById('ticketModal');
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+</body>
+</html>

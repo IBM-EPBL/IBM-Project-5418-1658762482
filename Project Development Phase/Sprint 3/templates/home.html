@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="{{url_for('intro')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+    <a href="{{url_for('image1')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LAUNCH</a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="{{url_for('intro')}}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+  <a href="{{url_for('image1')}}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LAUNCH</a>
+  
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/img.webp')}}" style="height:800px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small"style="max-height:1000px;">
+      <h1  style="color:black;"">A Gesture-based Tool for Sterile Browsing of Radiology Images</h1>
+      <h3><p style="color:blue;"><b>A web page for assisting medical professionals</b></p>   </h3>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/img1.webp')}}" style="height:800px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h1  style="color:black;">Gesture is recognised by deep learning.</h1>
+      <h3><p style="color:blue;"><b>Real time gesture recognition is achieved by employing a well trained CNN neural network.</b></p>    </h3>
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="{{url_for('static',filename='images/img2.webp')}}" style="height:700px">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h1  style="color:black;">Applications in various fields.</h1>
+      <h3><p style="color:blue;"><b>The gesture recognition provides hand free image browsing facility which is highly useful for other fields.</b></p>    </h3>
+    </div>
+  </div>
+
+  <!-- The Band Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">MOTIVATION</h2>
+    <p class=" w3-justify" style="font-size: large;">Humans are able to recognize body and sign language easily. This is possible due to the combination of vision and synaptic interactions that were formed along brain development . In order to replicate this skill in computers, some problems need to be solved: how to separate objects of interest in images and which image capture technology and classification technique are more appropriate, among others.
+          </p>
+    
+  </div>
+<footer class="w3-container  w3-center w3-opacity w3-light-grey w3-xlarge">
+  
+  <p class="w3-content">A project done by<br><b><ul><li>Monish Kumar.G</li><li>Sanjeev .U</li><li>Shriram .S</li><li>Vignesh .C</li></ul></b></p>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
